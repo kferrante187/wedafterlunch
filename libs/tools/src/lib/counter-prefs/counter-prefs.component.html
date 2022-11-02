@@ -1,0 +1,35 @@
+<div data-testid="count-by-component">
+  <div
+    class="btn-group"
+    role="group"
+    aria-label="set count by"
+  >
+    <button
+      (click)="changeCountBy(1)"
+      data-testid="count-by-1"
+      [disabled]="(by$ | async) === 1"
+      type="button"
+      class="btn btn-primary"
+    >
+      1
+    </button>
+    <button
+      [disabled]="(by$ | async) === 3"
+      (click)="changeCountBy(3)"
+      data-testid="count-by-3"
+      type="button"
+      class="btn btn-primary"
+    >
+      3
+    </button>
+    <button
+      [disabled]="(by$ | async) === 5"
+      (click)="changeCountBy(5)"
+      data-testid="count-by-5"
+      type="button"
+      class="btn btn-primary"
+    >
+      5
+    </button>
+  </div>
+</div>

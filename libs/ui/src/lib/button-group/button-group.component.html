@@ -1,0 +1,17 @@
+<div data-testid="button-group-component">
+  <div
+    class="btn-group"
+    role="group"
+    aria-label="Basic example"
+  >
+    <button
+      [disabled]="button.selected"
+      (click)="clicked(button)"
+      *ngFor="let button of buttons"
+      type="button"
+      class="btn btn-primary"
+    >
+      {{ button.label }}
+    </button>
+  </div>
+</div>

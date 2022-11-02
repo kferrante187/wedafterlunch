@@ -1,0 +1,10 @@
+<header class="container-fluid">
+  <h1>Angular Developer Testing</h1>
+</header>
+<main class="container">
+  <adt-button-group
+    [buttons]="buttonsToShow"
+    (selected)="theyDidIt($event)"
+  ></adt-button-group>
+  <router-outlet></router-outlet>
+</main>

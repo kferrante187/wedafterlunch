@@ -1,0 +1,18 @@
+<div data-testid="counter-component">
+  <button
+    [disabled]="(current$ | async) === 0"
+    data-testid="decrement-button"
+    class="btn btn-primary"
+    (click)="decrement()"
+  >
+    Decrease
+  </button>
+  <span data-testid="current">{{ current$ | async }}</span>
+  <button
+    data-testid="increment-button"
+    class="btn btn-primary"
+    (click)="increment()"
+  >
+    Increase
+  </button>
+</div>
