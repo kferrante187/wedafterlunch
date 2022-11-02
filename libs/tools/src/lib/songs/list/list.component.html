@@ -1,0 +1,26 @@
+<div
+  *ngIf="
+    (songs$ | async)?.length === 0 &&
+    (loaded$ | async) === true &&
+    (errored$ | async) === false
+  "
+  class="alert alert-info"
+  data-testid="empty-songs"
+>
+  <h2>You have no songs! Add some!</h2>
+</div>
+
+<div
+  class="alert alert-danger"
+  *ngIf="(errored$ | async) === true"
+>
+  <h2>Bummer! The API is Busted!</h2>
+</div>
+
+<div
+  data-testid="loading"
+  class="alert alert-info"
+  *ngIf="(loaded$ | async) === false && (errored$ | async) === false"
+>
+  <h2>Your songs are loading. Be patient. Geeze!</h2>
+</div>
